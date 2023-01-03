@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+@import 'utilities/variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: $primary;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+
+    .btn-container {
+        display: flex;
+        justify-content: start;
+
+        button, a {
+            margin-left: 10px !important;
+            text-decoration: none;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+
+        .btn {
+            background-color: $secondary;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            min-width: 200px;
+            margin: 10px 0;
+            color: $light;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    
+        .btn-transparent {
+            background-color: transparent;
+            outline: none;
+            border: 1px solid $secondary;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            min-width: 200px;
+            margin: 10px 0;
+            color: $light;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: bold;
+    
+            &:hover {
+                background-color: $secondary;
+            }
+        }
+    }
+}
+
+.header {
+    width: 100%;
+    height: 80vh !important;
+    margin-top: 0 !important;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(164, 14, 76, 0.8),
+        rgba(28, 93, 153, 0.9)),
+        url(../images/header-bg.jpg);
+    background-position: top;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+    
+
+    .container {
+        height: 80% !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+
+    .nav {
+        width: 100%;
+        margin: 0.25rem 0;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+
+        .menu {
+            display: flex;
+            list-style: none;
+
+            li {
+                margin: auto;
+
+                a {
+                    padding: 10px;
+                    color: #fff;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+
+                &:nth-child(4) {
+                    background-color: $secondary;
+                    padding: 15px;
+                    margin-left: 10px;
+                    border-radius: 40px;
+
+                    a {
+                        color: $light;
+                        letter-spacing: 1.5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .header-body {
+        width: 600px;
+        color: $light;
+        margin-top: auto;
+        height: auto;
+
+        h1 {
+            font-size: 60px;
+            line-height: 70px;
+        }
+
+        p {
+            margin: 30px 0;
+        }
+    }
+}
+
+.section {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    padding: 20px 0;
+    color: $light;
+
+    h1 {
+        font-family: 'Kanit', sans-serif;
+    }
+
+    .container {
+        width: 1300px;
+        height: 100%;
+        margin: 0 auto;
+    }
+}
+
+footer {
+    width: 100%;
+    height: auto;
+    background: linear-gradient(
+        to bottom,
+        #054A91,
+        $secondary
+    );
+    margin-bottom: 0 !important;
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & > div {
+            width: 100%;
+
+            &:nth-child(2) {
+                text-align: center;
+            }
+
+            &:nth-child(3) {
+                text-align: right;
+            }
+
+            & > * {
+                margin-bottom: 10px;
+            }
+        }
+
+        .info {
+            img {
+                width: 150px;
+            }
+        }
+
+        .links {
+            a {
+                text-decoration: none;
+                color: $light;
+                display: block;
+            }
+        }
+    }
+}
+
+@import 'pages/home';
+@import 'screens/large';
+@import 'screens/medium-large';
+@import 'screens/medium';
+@import 'screens/small';
