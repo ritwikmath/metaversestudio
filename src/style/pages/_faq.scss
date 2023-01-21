@@ -1,0 +1,47 @@
+.faqs {
+    .heading {
+        width: 100%;
+
+        h1 {
+            font-size: 60px;
+        }
+
+        p {
+            font-size: 25px !important;
+        }
+    }
+
+    .faq-container {
+        margin-top: 40px;
+        width: 100%;
+        height: auto;
+
+        .faq {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-color: $secondary;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            overflow: hidden;
+
+            p {
+                display: none;
+                margin-top: 20px;
+                color: $dark;
+                background: $light;
+                padding: 20px;
+                border-radius: 5px;
+
+                &.show {
+                    display: block !important;
+                }
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

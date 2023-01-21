@@ -123,9 +123,8 @@
             width: 100%;
             min-height: 300px;
             background: linear-gradient(to bottom right,
-                    #CFB4D0,
-                    #F2D1CF,
-                    #B0E7FC);
+                    $secondary,
+                    #B6F7B6);
             border-radius: 20px;
             color: $dark;
             padding: 35px 20px;
@@ -144,15 +143,15 @@
             }
 
             &:nth-child(1) i {
-                color: #79B791;
+                color: #fff;
             }
 
             &:nth-child(2) i {
-                color: #02A9EA;
+                color: #F1E9DB;
             }
 
             &:nth-child(3) i {
-                color: #E4572E;
+                color: #E2D2B6;
             }
         }
     }
@@ -187,6 +186,7 @@
 
             img {
                 height: 100%;
+                margin: auto;
             }
 
             h3 {
@@ -194,6 +194,9 @@
                 bottom: 30px;
                 left: 20px;
                 font-size: 30px;
+                background-color: $secondary;
+                border-radius: 5px;
+                padding: 5px;
             }
 
             &:nth-child(1) {
@@ -224,6 +227,7 @@
         h1 {
             width: 500px;
         }
+
         p {
             width: 400px;
             margin-left: auto;
@@ -235,7 +239,8 @@
         grid-template-columns: 300px 300px auto auto;
         grid-template-rows: auto;
         grid-gap: 20px;
-        & > div {
+
+        &>div {
             height: 300px;
             display: flex;
             align-items: center;
@@ -267,6 +272,7 @@
 
 .feedback-section {
     margin-bottom: 100px;
+
     .heading {
         text-align: center;
         flex-direction: column;
@@ -290,11 +296,9 @@
             text-align: center;
             width: 100%;
             height: 300px;
-            background: linear-gradient(
-                to bottom right,
-                $secondary,
-                #7FB069
-            );
+            background: linear-gradient(to bottom right,
+                    $secondary,
+                    #7FB069);
             padding: 10px 20px;
             border-radius: 20px;
             position: relative;
@@ -334,7 +338,7 @@
     width: 500px;
     position: absolute;
     right: 200px;
-    top: 40%;
+    top: 50%;
     transform: translate(0, -50%);
     z-index: 200;
     animation-name: floating;
@@ -364,7 +368,7 @@
         }
 
         .body {
-            width: 450px;
+            width: 450px !important;
 
             h1 {
                 margin-bottom: 10px;
@@ -402,17 +406,26 @@
             h1 {
                 width: 500px;
             }
+
             p {
                 width: 400px;
                 margin-left: auto;
             }
         }
-    
+
         .platforms {
             grid-template-columns: 200px 200px auto auto;
 
-            & > div {
+            &>div {
                 height: 200px;
+            }
+        }
+    }
+
+    .feedback-section {
+        .feedbacks {
+            .feedback {
+                height: 350px;
             }
         }
     }
@@ -430,7 +443,7 @@
     .platforms {
         grid-template-columns: 1fr 1fr !important;
 
-        & > div {
+        &>div {
             &:nth-child(5) {
                 height: 200px;
                 grid-column: 1/3 !important;
@@ -487,6 +500,59 @@
                 "fourth fifth" !important;
         }
     }
+
+    .feedback-section {
+        margin-bottom: 100px;
+
+        .heading {
+            text-align: center;
+            flex-direction: column;
+
+            h1 {
+                margin-bottom: 20px;
+            }
+        }
+
+        .feedbacks {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-row-gap: 20px;
+
+            .feedback {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                margin: 0 !important;
+
+                & > * {
+                    align-content: center;
+                    justify-items: center;
+                    align-items: center;
+                    align-content: center;
+                }
+
+                .client {
+                    position: relative;
+                    grid-column: 2/3;
+                    grid-row: 1/3;
+                    bottom: 0;
+                }
+
+                p {
+                    margin-bottom: 20px;
+                }
+
+                i {
+                    color: #FFD700;
+                }
+
+                &:nth-child(2) {
+                    margin: 0 20px;
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -494,7 +560,7 @@
         flex-direction: column;
 
         .body {
-            width: 100%;
+            width: 100% !important;
         }
     }
 

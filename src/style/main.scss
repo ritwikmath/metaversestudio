@@ -73,7 +73,7 @@ body {
 
 .header {
     width: 100%;
-    height: 80vh !important;
+    height: 90vh !important;
     margin-top: 0 !important;
     background-image: linear-gradient(
         to right bottom,
@@ -149,6 +149,17 @@ body {
     }
 }
 
+
+
+.half-header {
+    height: 60vh !important;
+
+    .header-body {
+        text-align: center;
+        margin: auto;
+    }
+}
+
 .section {
     width: 100%;
     height: auto;
@@ -215,6 +226,9 @@ footer {
 }
 
 @import 'pages/home';
+@import 'pages/contact';
+@import 'pages/about';
+@import 'pages/faq';
 @import 'screens/large';
 @import 'screens/medium-large';
 @import 'screens/medium';

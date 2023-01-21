@@ -21,8 +21,10 @@
         }
 
         .nav {
-            .menu {
-                display: none;
+            flex-direction: column;
+
+            menu {
+                margin-top: 20px;
             }
         }
 
@@ -41,6 +43,24 @@
 
             p {
                 margin: 10px 0;
+            }
+        }
+    }
+
+    footer {
+        .container {
+            flex-direction: column;
+
+            & > div {
+                text-align: left !important;
+
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+
+                h3 {
+                    text-decoration: underline;
+                }
             }
         }
     }
