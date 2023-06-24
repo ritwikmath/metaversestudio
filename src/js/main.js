@@ -58,3 +58,13 @@ document.querySelectorAll(".faq").forEach(faq_element => {
         faq.querySelector("p").classList.toggle("show")
     })
 })
+
+pdfViewerClose = document.querySelector(".pdf-viewer-close");
+
+pdfViewerClose.addEventListener('click', () => {
+    document.querySelector(".pdf-container").style.display = "none";
+})
+
+document.querySelector(".open-pdf").addEventListener('click', () => {
+    document.querySelector(".pdf-container").style.display = "flex";
+})

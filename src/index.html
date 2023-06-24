@@ -13,6 +13,7 @@
 
 <body>
     <img class="floating" src="./images/header-floating.png" alt="Floating">
+    <div class="iframeDisplay" id="iframeDisplay"></div>
     <div class="header section">
         <div class="container">
             <nav class="nav">
@@ -88,7 +89,7 @@
                     <i class="fa-solid fa-lightbulb"></i>
                     <h2>Fresh Ideas</h2>
                     <p>We bring our diverse background of best design, branding, public relations, research and
-                        strategic planning to work for your company. Not only will your designs look great – they will
+                        strategic planning to work for your company. Not only will your designs look great, they will
                         get results.</p>
                 </div>
                 <div class="box">
@@ -100,8 +101,8 @@
                 <div class="box">
                     <i class="fa-solid fa-clock"></i>
                     <h2>On-Time Schedule</h2>
-                    <p>We have worked with select companies and creative agencies for many years. Their rule – They have
-                        some of the tightest turnarounds in the business – that also includes a commitment to stay on
+                    <p>We have worked with select companies and creative agencies for many years. Their rule, They have
+                        some of the tightest turnarounds in the business, that also includes a commitment to stay on
                         budget and on deadline.</p>
                 </div>
             </div>
@@ -112,33 +113,34 @@
             <div class="heading">
                 <h1>Portfolio</h1>
                 <div class="btn-container">
-                    <a href="mailto:mailus@metaversestudios.info" class="btn">
-                        <span>Want to talk?</span>
+                    <button class="btn" id="openscrom">See Demo</button>
+                    <!-- <a href="http://scrom.s3-website-ap-northeast-1.amazonaws.com/Nurse_II_Scorm" class="btn">
+                        <span>See demo</span>
                         &nbsp;
                         <i class="fa-sharp fa-solid fa-arrow-right"></i>
-                    </a>
+                    </a> -->
                 </div>
             </div>
             <div class="games">
                 <div class="game">
-                    <h3>Showroom</h3>
-                    <img src="./images/game1.png" alt="Super Mario">
+                    <h3>Metaverse Showroom</h3>
+                    <img src="./images/game1.webp" alt="Super Mario">
                 </div>
                 <div class="game">
-                    <h3>Rummy</h3>
+                    <h3>Card & Board</h3>
                     <img src="./images/game2.webp" alt="Super Mario">
                 </div>
                 <div class="game">
-                    <h3>Nurse</h3>
-                    <img src="./images/game1.jpg" alt="Super Mario">
-                </div>
-                <div class="game">
-                    <h3>Madina</h3>
-                    <img src="./images/game1.jpg" alt="Super Mario">
-                </div>
-                <div class="game">
-                    <h3>8 ball pool</h3>
+                    <h3>Infrastructure</h3>
                     <img src="./images/game3.webp" alt="Super Mario">
+                </div>
+                <div class="game">
+                    <h3>VR-Madina</h3>
+                    <img src="./images/game4.webp" alt="Super Mario">
+                </div>
+                <div class="game">
+                    <h3>Medical Simulations</h3>
+                    <img src="./images/game5.webp" alt="Super Mario">
                 </div>
             </div>
             <div class="platform section">
@@ -259,7 +261,7 @@
                 <h3>Contact Us</h3>
                 <p>
                     <i class="fa-solid fa-phone"></i>
-                    <span>9000941167</span>
+                    <span>+91-9000941167</span>
                 </p>
                 <p>
                     <i class="fa-solid fa-envelope"></i>
@@ -268,6 +270,23 @@
             </div>
         </div>
     </footer>
+    <script>
+        openscrom = document.getElementById("openscrom")
+
+        openscrom.addEventListener('click', (e) => {
+            e.preventDefault()
+            iframeDisplay = document.getElementById("iframeDisplay")
+            iframeDisplay.style.display = 'block'
+            iframeDisplay.innerHTML = '<span class="close" id="close">+</span><iframe src="https://s3.ap-northeast-1.amazonaws.com/www.metaversestudios.info/scrom.html" title="description"></iframe>'
+
+            close = document.getElementById("close")
+            if (close)
+                close.addEventListener('click', (e) => {
+                    iframeDisplay.style.display = 'none'
+                    iframeDisplay.innerHTML = ''
+                })
+        })
+    </script>
 </body>
 
 </html>
