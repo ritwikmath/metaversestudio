@@ -3,7 +3,7 @@ var animItem = bodymovin.loadAnimation({
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: 'https://metaverse-images.s3.ap-northeast-1.amazonaws.com/mail.json'
+    path: '/mail.json'
 });
 
 const contactForm = document.getElementById("contact-form");
@@ -20,7 +20,7 @@ if (contactForm) {
             "message": e.target.querySelector("#message").value,
         }
 
-        let resp = await fetch('https://khivlrzp4bxdgiaowwmcqfdzty0dupsf.lambda-url.ap-northeast-1.on.aws/', {
+        let resp = await fetch('http://www.metaversestudios.info:5000', {
             method: 'POST',
             headers: { 
                 'Access-Control-Allow-Origin': '*',
@@ -46,7 +46,7 @@ var animItem = bodymovin.loadAnimation({
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: 'https://metaverse-images.s3.ap-northeast-1.amazonaws.com/teamwork.json'
+    path: '/teamwork.json'
 });
 
 document.querySelectorAll(".faq").forEach(faq_element => {
@@ -61,10 +61,11 @@ document.querySelectorAll(".faq").forEach(faq_element => {
 
 pdfViewerClose = document.querySelector(".pdf-viewer-close");
 
-pdfViewerClose.addEventListener('click', () => {
-    document.querySelector(".pdf-container").style.display = "none";
-})
+if (pdfViewerClose)
+    pdfViewerClose.addEventListener('click', () => {
+        document.querySelector(".pdf-container").style.display = "none";
+    })
 
-document.querySelector(".open-pdf").addEventListener('click', () => {
+document.querySelector(".open-pdf")?.addEventListener('click', () => {
     document.querySelector(".pdf-container").style.display = "flex";
 })
