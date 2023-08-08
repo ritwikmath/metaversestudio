@@ -13,7 +13,13 @@
 
 <body>
     <img class="floating" src="./images/header-floating.png" alt="Floating">
-    <div class="iframeDisplay" id="iframeDisplay"></div>
+    <div class="iframeDisplay" id="iframeDisplay">
+        <span id="close" class="close">&times;</span>
+        <video id="videoPlayer" controls autoplay="true">
+            <source src="./videos/Medical Room Showreel_3.mp4" type="video/mp4" />
+            <!-- Add other video formats here if needed (e.g., webm, ogg) -->
+        </video>
+    </div>
     <div class="header section">
         <div class="container">
             <nav class="nav">
@@ -113,7 +119,7 @@
             <div class="heading">
                 <h1>Portfolio</h1>
                 <div class="btn-container">
-                    <button class="btn" id="openscrom">See Demo</button>
+                    <button class="btn" id="openVideo">See Demo</button>
                     <!-- <a href="http://scrom.s3-website-ap-northeast-1.amazonaws.com/Nurse_II_Scorm" class="btn">
                         <span>See demo</span>
                         &nbsp;
@@ -123,23 +129,23 @@
             </div>
             <div class="games">
                 <div class="game">
-                    <h3>Metaverse Showroom</h3>
+                    <h3><small>Metaverse Showroom</small></h3>
                     <img src="./images/game1.webp" alt="Super Mario">
                 </div>
                 <div class="game">
-                    <h3>Card & Board</h3>
+                    <h3><small>Card & Board</small></h3>
                     <img src="./images/game2.webp" alt="Super Mario">
                 </div>
                 <div class="game">
-                    <h3>Infrastructure</h3>
+                    <h3><small>Infrastructure</small></h3>
                     <img src="./images/game3.webp" alt="Super Mario">
                 </div>
                 <div class="game">
-                    <h3>VR-Madina</h3>
+                    <h3><small>VR-Madina</small></h3>
                     <img src="./images/game4.webp" alt="Super Mario">
                 </div>
                 <div class="game">
-                    <h3>Medical Simulations</h3>
+                    <h3><small>Medical Simulations</small></h3>
                     <img src="./images/game5.webp" alt="Super Mario">
                 </div>
             </div>
@@ -271,19 +277,20 @@
         </div>
     </footer>
     <script>
-        openscrom = document.getElementById("openscrom")
+        openVideo = document.getElementById("openVideo")
 
-        openscrom.addEventListener('click', (e) => {
+        openVideo.addEventListener('click', (e) => {
             e.preventDefault()
             iframeDisplay = document.getElementById("iframeDisplay")
-            iframeDisplay.style.display = 'block'
-            iframeDisplay.innerHTML = '<span class="close" id="close">+</span><iframe src="https://s3.ap-northeast-1.amazonaws.com/www.metaversestudios.info/scrom.html" title="description"></iframe>'
+            iframeDisplay.style.display = 'flex'
+            document.getElementById('videoPlayer').play();
 
             close = document.getElementById("close")
+            console.log(close)
             if (close)
                 close.addEventListener('click', (e) => {
                     iframeDisplay.style.display = 'none'
-                    iframeDisplay.innerHTML = ''
+                    document.getElementById('videoPlayer').pause();
                 })
         })
     </script>
