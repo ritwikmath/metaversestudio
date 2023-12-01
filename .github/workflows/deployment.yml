@@ -20,4 +20,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: touch ~/working.md
+        script: |
+          cd /var/www/metaversestudio
+          git pull origin main
+          npm run build
