@@ -15,10 +15,11 @@
     <img class="floating" src="./images/header-floating.png" alt="Floating">
     <div class="iframeDisplay" id="iframeDisplay">
         <span id="close" class="close">&times;</span>
-        <video id="videoPlayer" controls autoplay="true">
-            <source src="./videos/Medical Room Showreel_3.mp4" type="video/mp4" />
+        <iframe src="http://archviz-0112.s3-website.ap-south-1.amazonaws.com/" frameborder="0"></iframe>
+        <!-- <video id="videoPlayer" controls autoplay="true"> -->
+            <!-- <source src="./videos/Medical Room Showreel_3.mp4" type="video/mp4" /> -->
             <!-- Add other video formats here if needed (e.g., webm, ogg) -->
-        </video>
+        <!-- </video> -->
     </div>
     <div class="header section">
         <div class="container">
@@ -283,10 +284,9 @@
             e.preventDefault()
             iframeDisplay = document.getElementById("iframeDisplay")
             iframeDisplay.style.display = 'flex'
-            document.getElementById('videoPlayer').play();
+            // document.getElementById('videoPlayer').play();
 
             close = document.getElementById("close")
-            console.log(close)
             if (close)
                 close.addEventListener('click', (e) => {
                     iframeDisplay.style.display = 'none'
